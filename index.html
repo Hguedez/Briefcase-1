@@ -163,7 +163,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="mailto:hileryguedez@gmail.com">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -222,7 +222,7 @@
                 <h4 class="card-subtitle mb-2 mt-4"> I have a proven track record of designing and implementing software solutions to improve performance and efficiency</h4>
                 <div class="row mt-5 d-flex align-items-center">
                     <div class="col-12 col-lg-3 col-md-5 mr-3">
-                        <button class="contact-btn px-5 py-2">Contact</button>
+                        <button class="contact-btn px-5 py-2" onclick="sendEmail()">Contact</button>
                     </div>
                     <div class="col-12 col-lg-8 col-md-6">
                         <div class="row wrap-social-media">
@@ -291,7 +291,9 @@
     function showPages(url){
         window.open(url,'_blank');
     }
-    
+    function sendEmail() {
+        window.location.href = "mailto:hileryguedez@gmail.com";
+    }
 </script>
 </body>
 </html>
