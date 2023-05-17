@@ -5,29 +5,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap css -->
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
     <!-- Our css -->
-    <title>Frontend Briefcase</title>
+    <title>Hilery Guedez Portfolio</title>
     <style>
-        
-       
+        body{
+            font-family: 'Nunito Sans', sans-serif !important;
+        }
+       /*----------------------------Navbar styles---------------------*/
+        :root {
+            --main-font: 'Nunito Sans', sans-serif;
+            --main-color: #1d3557;
+            --main-hover: #457b9d;
+        }
+        .color-sl-primary{
+            text-decoration: none !important;
+            color: var(--main-color);
+        }
+        .btn.bg-shocklogic{
+            color: #fff;
+        }
+
+        .btn.bg-shocklogic:hover, .dropdown-menu .dropdown-item:hover{
+            background-color: var(--shocklogic-hover) !important;
+            color: #fff !important;
+        }
+
+        .navbar.navbar-dark .navbar-toggler-icon{
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 110, 11, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+
+        .navbar.navbar-dark .breadcrumb .nav-item .nav-link, .navbar.navbar-dark .navbar-nav .nav-item .nav-link{
+            color: #333;
+            text-align: center;
+        }
+
+        #navbarDropdownMenuLink-4{
+            color: #fff !important;
+        }
+
+        .bg-shocklogic-third{
+            background-color: #525A78;
+        }
+
+        .nav-item-square .card-hover{
+            -webkit-box-shadow: none !important;
+        }
+
+        .nav-item-square .card-hover{
+            border-bottom: 5px solid #fff;
+        }
+
+        .nav-item-square .box{
+            border-radius: 7px;
+        }
+
+        .navbar a i:hover, .navbar .nav-link[aria-expanded=true] i{
+            color: var(--shocklogic-hover);
+        }
+
+        /*--------------------------------------------------------------*/
+        .presentatation-card{
+            background: linear-gradient(#d9ed92,#52b69a);
+            border-radius: 25px;
+            border: none;
+        }
+        button{
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            font-size: 1rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            text-transform: unset;
+            box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%) !important;
+        }
+        .contact-btn{
+            border-radius: 30px;
+            background: #313638;
+            color: white;
+        }
+        .social-media-btn{
+            border-radius: 50%;
+            background: white;
+            color: #313638;
+            display:block;
+            width: 50px;
+            height: 50px;
+        }
+        .instagram:hover{
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+        .linkedin:hover{
+            background-color: #0A66C2;
+            color: white;
+        }
+        .profil-img{
+            border-radius: 50%;
+            display:block;
+            width: 230px;
+            height: 230px;
+        }
     </style>
 </head>
 <body>
-<div class="container-fluid">
+<div class="container">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-white d-flex justify-content-end">
+        <!-- Navbar brand -->
+        <div class="d-none d-sm-block">
+            Hilery Guedez
+        </div>
+            <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Menu content for mobiles -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+            <ul class="navbar-nav mr-auto d-sm-none">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('unified-login')}}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('my-account')}}">Projects</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://shocklogic.zendesk.com/hc/en-us">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Menu content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
 
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item pr-3 mr-2" style="padding-top: 9px;">
+                    <a href="#profile" class="color-sl-primary">
+                        <li class=" menu-bar-icon">
+                            Profile
+                        </li>
+                    </a>
+                </li>
+                <li class="nav-item pr-3 mr-2" style="padding-top: 9px;">
+                    <a href="#projects" class="color-sl-primary">
+                        <li class=" menu-bar-icon">
+                            Projects
+                        </li>
+                    </a>
+                </li>
+                <li class="nav-item pr-3 mr-2" style="padding-top: 9px;">
+                    <a href="#contact" class="color-sl-primary">
+                        <li class=" menu-bar-icon">
+                            Contact
+                        </li>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <div class="dropdown-menu dropdown-menu-right dropdown-info"
+                        aria-labelledby="navbarDropdownMenuLink-4" style="width: 400px">
+                        <div class="">
+
+                            <div class="col-md-4" style="float: left; padding-right: 10px; padding-left: 10px">
+                                <a class="p-0 nav-item-square" style="display: block !important;" href="{{route('unified-login')}}">
+                                    <div class="card card-hover">
+                                        <div class="box bg-shocklogic text-center">
+                                            <h2 class="font-light text-white pt-3"><i class="fas fa-home" style="font-size: 2rem"></i></h2>
+                                            <h6 class="text-white pb-1">Dashboard</h6>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>      
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- Collapsible content -->
+    </nav>
+    <div class="row d-flex justify-content-between" id="profile">
+        <div class="col-12 col-lg-8 col-md-8">
+            <div class="card w-100 presentatation-card p-3">
+              <div class="card-body">
+                <h2 class="card-title"><strong>Hello, I'm Hilery Guedez a Software engineer with 3+ years of experience in software development</strong> </h2>
+                <h4 class="card-subtitle mb-2 mt-4"> I have a proven track record of designing and implementing software solutions to improve performance and efficiency</h4>
+                <div class="row mt-5 d-flex align-items-center">
+                    <div class="col-4 col-lg-3 col-md-5">
+                        <button class="contact-btn px-5 py-2">Contact</button>
+                    </div>
+                    <div class="col-2 col-lg-1 col-md-2">
+                        <button class="social-media-btn instagram"><i class="fab fa-instagram fa-lg"></i></button>
+                    </div>
+                    <div class="col-2 col-lg-1 col-md-2">
+                        <button class="social-media-btn linkedin"><i class="fab fa-linkedin fa-lg"></i></button>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 col-md-4 d-flex align-items-center justify-content-center">
+            <img src="images/Hilery_foto_white_background.jpg" class="profil-img">
+        </div>
+    </div>
 </div>
 
 <!-- Bootstrap and jQuery -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
 <!--select2-->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+<!--sweetalert2-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     
     
