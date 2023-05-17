@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,700&display=swap" rel="stylesheet">
+    <!-- Our css -->
+    <title>Enquiry form</title>
+    <style>
+        body{
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        .header-text{
+            color: #FFFFFF;
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 800;
+        }
+        .logo_footer{
+            height: 104.77px;
+        }
+        .header-content{
+            position: absolute;
+        }
+        input{
+            border: 1px solid #707070 !important;
+            border-radius: 10px !important;
+            box-shadow: none !important;
+        }
+        #register-btn{
+            box-shadow: 0px 3px 6px #00000029 !important;
+            border-radius: 40px;
+            background: #2D2D3F;
+            color: white;
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        .contact-number{
+            color: white;
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 500;
+            font-size: large;
+        }
+        .icons{
+            position: absolute;
+        }
+        .contact-section{
+            position: absolute;
+            bottom: 10%;
+        }
+        .subtitle{
+            color: #FF6E0B;
+        }
+        .checkbox-titles{
+            color: #8B8B8B !important;
+        }
+        .align-items-around{
+            flex-direction: column;
+            justify-content: space-between;
+            display: flex;
+        }
+        select{
+            border: 1px solid #707070 !important;
+            border-radius: 10px !important;
+            box-shadow: none !important;
+            color: #707070 !important;
+        }
+        .break-description{
+            word-break: break-all;
+        }
+
+        /* Extra small devices (portrait phones, less than 576px) */
+        @media (min-width: 0px) {
+            .header-text {
+                font-size: larger;
+            }  
+            .register-form{
+                margin-left: 2rem;
+            }
+            .header-content{
+                margin-left: 2rem;
+                align-items: flex-start;
+            }
+            .header{
+                height: 120px;
+            }
+            .footer{
+                height: 620px;
+            }
+            .logo_header{
+                width: 74.34px; 
+                height: 58.77px;
+            }
+            .icons{
+                bottom: 32%;
+            }
+            .contact-section{
+                bottom: 7%;
+            }
+            .contact-number{
+                width: 100%;
+            }
+            .add-event, .col-register-btn{
+                text-align: center;
+            }
+        }
+
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) {
+            .header-content{
+                align-items: center;
+            }
+            .contact-section{
+                display: flex;
+                justify-content: center;
+            }
+            .contact-number{
+                width: auto;
+            }
+        }
+
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) {
+            .logo_header{
+                width: 94.34px; 
+                height: 78.77px;
+            }
+            .icons{
+                bottom: 22%;
+            }
+            .col-register-btn{
+                text-align: right;
+            }
+            .add-event{
+                text-align: left;
+            }
+        }
+
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+            .register-form,.header-content{
+                margin-left: 10rem;
+            }
+            .header{
+                height: 250px;
+            }
+            .footer{
+                height: 712px;
+            }
+         }
+
+        /* Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) {
+             .register-form,.header-content{
+                margin-left: 16rem;
+            }
+            .header-text {
+                font-size: x-large;
+            }
+            .img_ebook{
+                bottom: 80px;
+                height:450px ; /*this height is static to reduce the extra space of ther ebook image*/
+            }
+        }
+
+        @media (min-width: 1500px) {
+            .header-text {
+                font-size: 33px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row header" style="position: relative;">
+        <img src="images/bg_header.png" alt="" width="100%" class="bg_header">
+        <div class="pl-0 col-xl-8 col-lg-8 col-11 mt-xl-4 mt-lg-4 d-flex justify-content-between header-content ">
+            <p class="header-text"><span>Enquiry form</span><br><span style="font-size: large;font-weight: 100;"> Please complete the fields below</span></p>
+            <img src="https://www5.shocklogic.com/v2/img/favicons/SL_favicon.png" alt="" class="logo_header">
+        </div> 
+    </div>
+
+
+<script type="text/javascript">
+    var validatebox = function (){
+        var full = new Array();
+        $("input:checkbox.products:checked").each(function(){
+            full.push($(this).val());
+            $('#Products').val(full);
+        });
+        return full;
+    };
+
+    let attachmentNumber = 1;
+    
+    function addAttach(){
+
+        var AttachmentSection = document.getElementById("AttachmentSection");
+        attachmentNumber++;
+        console.log(attachmentNumber);
+        var AttachmentSectioninnerHTML = '<div class="col-11 pr-0" id="rowAttach'+attachmentNumber+'">'+
+                '<div class="row d-flex justify-content-between mt-2">'+
+                    '<div >'+
+                        '* '+
+                    '</div>'+ 
+                    '<div class="col-xl-3 col-lg-2 mt-2 px-0">'+
+                        '<div class="input-group" >'+
+                            '<input type="tex" class="form-control" placeholder="Event name" name="eventName[]" aria-describedby="basic-addon1" required>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="col-xl-2 col-lg-2 mt-2 px-0">'+
+                        '<div class="input-group" >'+
+                            '<input type="tex" class="form-control text-xl-center text-lg-center" placeholder="Event Days" name="eventDates[]" aria-describedby="basic-addon1" required>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="col-xl-2 col-lg-2 mt-2 px-0">'+
+                        '<div class="input-group" >'+
+                            '<input type="tex" class="form-control px-0" placeholder="Attendees quantity" name="eventAttendees[]" aria-describedby="basic-addon1" style="padding-left: 10px !important" required>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="col-xl-3 col-lg-2 mt-2 px-0">'+
+                        '<div class="custom-file">'+
+                            '<input type="file" class="custom-file-input" id="uploadedfile" name="uploadedfile[]">'+
+                            '<label class="custom-file-label" for="customFileLangHTML" data-browse="Attach programme"></label>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="col-xl-1 col-lg-3 mt-2 text-right">'+
+                         '<a class="" value="Remove" onClick="removeAttach('+attachmentNumber+')" style="cursor: pointer;"><i class="far fa-times-circle fa-2x"></i></a>'+
+                        
+                    '</div>'+
+                '</div>'+
+            '</div>';
+            
+            AttachmentSection.insertAdjacentHTML( "beforeend", AttachmentSectioninnerHTML )
+    }
+
+    function removeAttach(id){
+        var rows = document.getElementById("rowAttach"+id).remove();
+    }
+
+</script>
+
+<?php
+    if($_GET['send'] == true){
+    ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <h4 class="alert-heading">Well done!</h4>
+        <p>Enquiry successfully Sent.</p>
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div> 
+    <?php  
+    }
+?>
+    <form method="POST" class="register-form" id="registerForm">
+        <div class="row d-flex justify-content-between">
+            <div class="mt-2 pl-0 col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                <div class="mb-3 subtitle">
+                    <h5>Your information:</h5>
+                </div>
+                <div >
+                    <div class="form-group" >
+                        <input type="text" class="form-control" placeholder="First name*" name="fname" aria-describedby="basic-addon1" required>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="input-group" >
+                        <input type="text" class="form-control" placeholder="Last name*" name="lname" aria-describedby="basic-addon1" required>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="input-group" >
+                        <input type="email" class="form-control" placeholder="Email*" name="email" aria-describedby="basic-addon1" required>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="input-group" >
+                        <input type="text" class="form-control" placeholder="Organisation*"  name="organ" aria-describedby="basic-addon1" required>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <select class="custom-select" name="organType" >
+                        <option value="all" selected>Organisation type*</option>
+                    </select>
+                </div>
+                <div class="mt-3">
+                    <div class="input-group" >
+                        <input type="text" class="form-control" placeholder="Job title*" name="jobTitle" aria-describedby="basic-addon1" required>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="input-group" >
+                        <input type="text" class="form-control" placeholder="Website*" name="website" aria-describedby="basic-addon1" required>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="input-group" >
+                        <input type="text" class="form-control" placeholder="Phone*" name="phone" aria-describedby="basic-addon1" required>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2 col-sm-8 col-md-6 col-lg-6 col-xl-7 align-items-around">
+                <div class="row d-flex align-items-center subtitle mb-2">
+                    <h5>Which Shocklogic products are you interested in?</h5>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                         <input type="checkbox" value="Webinarlogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Webinarlogic</strong> - Online/virtual/digital events 
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                         <input type="checkbox" value="Virtualogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Virtualogic</strong> - Online event experiences   
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Memberlogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Memberlogic</strong> - Online membership management 
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Participantlogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Participantlogic</strong> - Online registration management 
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Onsitelogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Onsitelogic</strong> - Onsite registration & barcoded badges  
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Abstractlogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Abstractlogic</strong> - Abstract & programme management 
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Roomlogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Roomlogic</strong> - Hotel booking platform   
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Mobapplogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Mobapplogic</strong> - Mobile app builder     
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Scanlogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Scanlogic</strong> - Access control, attendee tracking, lead retrieval       
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Votelogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Votelogic</strong> - Voting & event audience response       
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Eposterlogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Eposterlogic</strong> - ePoster viewing system        
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Guestlistlogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Guestlistlogic</strong> - Guest list management app       
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Exhibitorlogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Exhibitorlogic</strong> - Online exhibition management       
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Virtualogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Surveylogic</strong> - Survey generator       
+                    </div>
+                </div>
+                <div class="row d-flex checkbox-titles">
+                    <div>
+                        <input type="checkbox" value="Virtualogic"  class="products" onclick="validatebox()">
+                    </div>
+                    <div class="col-11 px-0 ml-2 break-description">
+                        <strong>Paylogic</strong> - Mobile ticket box office   
+                    </div>
+                </div>
+                <input type="hidden" name="products" placeholder="products" id="Products">
+            </div>
+        </div>
+        <div class="row mt-5 mb-4 subtitle">
+            <h5>Event information:</h5>
+        </div>
+        <div class="row">
+            <div class="checkbox-titles">
+                How many upcoming events are you looking to organise?
+                <button type="button" class="btn btn-light dropdown-toggle ml-2 mb-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select
+                </button>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="AttachmentSection">
+            <div class="col-11 pr-0" id="rowAttach1">
+                <div class="row d-flex justify-content-between mt-2">
+                    <div >
+                        * 
+                    </div>
+                    <div class="col-xl-3 col-lg-2 mt-2 px-0">
+                        <div class="input-group" >
+                            <input type="tex" class="form-control" placeholder="Event name" name="eventName[]" aria-describedby="basic-addon1" required>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 mt-2 px-0">
+                        <div class="input-group" >
+                            <input type="tex" class="form-control text-xl-center text-lg-center" placeholder="Event Days" name="eventDates[]" aria-describedby="basic-addon1" required>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 mt-2 px-0">
+                        <div class="input-group" >
+                            <input type="tex" class="form-control px-0" placeholder="Attendees quantity" name="eventAttendees[]" aria-describedby="basic-addon1" style="padding-left: 10px !important" required>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-2 mt-2 px-0">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="uploadedfile" name="uploadedfile[]">
+                            <label class="custom-file-label" for="customFileLangHTML" data-browse="Attach programme"></label>
+                        </div>
+                    </div>
+                    <div class="col-xl-1 col-lg-2 mt-2 text-right">
+                        <a class="" value="Remove" onClick="removeAttach(1)" style="cursor: pointer;"><i class="far fa-times-circle fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="px-0 col-11 ml-xl-4 ml-lg-4 add-event">
+                <a class="btn btn-light mt-3 checkbox-titles" value="Add event" onClick="addAttach()"><i class="fas fa-plus mr-2"></i>Add event</a>
+            </div>
+        </div>
+       <div class="row">
+            <div class="pr-0 col-11 mt-5 col-register-btn px-0">
+                <button id="register-btn" type="submit" name="submit" class="btn py-2 px-5">Submit</button>
+            </div>
+       </div>
+    </form>
+    <div class="row footer" style="position: relative;">
+        <img src="images/bg_footer.png" alt="" width="100%" >
+        <div class="d-flex justify-content-center w-100" style="position: absolute;bottom: 40%;">
+            <img src="https://www5.shocklogic.com/v2/img/SystemAssets/Unifiedlogin/Login/shocklogic-logo.png" class="logo_footer">
+        </div>
+        <div class="d-flex justify-content-center w-100 icons">
+            <div class="mr-5 pr-xl-5 pr-lg-5">
+                <a href="https://www.facebook.com/ShocklogicEvents/" target="_blank"><img src="images/ic_fb.png" ></a>
+            </div>
+            <div class="mr-5 pr-xl-5 pr-lg-5">
+                <a href="https://twitter.com/shocklogic" target="_blank"><img src="images/ic_tw.png" ></a>
+            </div>
+            <div class="mr-5 pr-xl-5 pr-lg-5">
+                <a href="https://www.youtube.com/user/ShocklogicTV" target="_blank"><img src="images/ic_yt.png" ></a>
+            </div>
+            <div class="">
+                <a href="https://www.linkedin.com/company/shocklogic-global-ltd" target="_blank"><img src="images/ic_in.png" ></a>
+            </div>
+        </div>
+        <div class="contact-section text-center w-100" >
+            <div class="mr-5 pr-xl-5 pr-lg-5 contact-number">
+                <a href="mailto: info@shocklogic.com" style="color:white"><p>info@shocklogic.com</p></a>
+            </div>
+             <div class="mr-5 pr-xl-5 pr-lg-5 contact-number" style="display: list-item;">
+                <a href="https://shocklogic.com/" target="_blank" style="color:white"><p>www.shocklogic.com</p></a>
+            </div>
+            <div class="contact-number" style="display: list-item;">
+                <p>+44 (0) 207 326 0286</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap and jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+</body>
+</html>
