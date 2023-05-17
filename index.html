@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
     <!-- Our css -->
     <title>Hilery Guedez Portfolio</title>
     <style>
@@ -111,6 +114,17 @@
             width: 230px;
             height: 230px;
         }
+        .project-card {
+            width: 310px;
+            height: 310px;
+            border-radius: 25px;
+            box-shadow: 10px 10px 5px -7px #9f9f9f45;
+            transition: 0.2s ease-in;
+            cursor: pointer;
+        }
+        .project-card:hover{
+            transform: scaleY(1.05) scaleX(1.05);
+        }
     </style>
 </head>
 <body>
@@ -129,14 +143,14 @@
         <div class="collapse navbar-collapse" id="basicExampleNav">
             <ul class="navbar-nav mr-auto d-sm-none">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('unified-login')}}">Profile</a>
+                    <a class="nav-link" href="#profile">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('my-account')}}">Projects</a>
+                    <a class="nav-link" href="#projects">Projects</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="https://shocklogic.zendesk.com/hc/en-us">Contact</a>
+                    <a class="nav-link" href="mailto:hileryguedez@gmail.com">Contact</a>
                 </li>
             </ul>
         </div>
@@ -211,6 +225,33 @@
             <img src="images/Hilery_foto_white_background.jpg" class="profil-img">
         </div>
     </div>
+    <div class="row d-flex justify-content-between mt-4" id="projects">
+        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center" onclick="showProject('FAQ.html')">
+            <div class="card project-card p-3 mt-3" style="background: #ffba08">
+                <div class="card-body">
+                    <h5 class="card-subtitle mb-2 text-white"> FAQ Template</h5>
+                    <p>This was made for a client that needed an faq about their event</p>
+                    <div class="d-flex justify-content-center">
+                        <img src="images/faq.png" class="img-fluid " width="70%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
+            <div class="card project-card p-3 mt-3">
+                <div class="card-body">
+                    Hello
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
+            <div class="card project-card p-3 mt-3">
+                <div class="card-body">
+                    Hello
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Bootstrap and jQuery -->
@@ -226,7 +267,9 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    
+    function showProject(url){
+        window.open(url,'_blank');
+    }
     
 </script>
 </body>

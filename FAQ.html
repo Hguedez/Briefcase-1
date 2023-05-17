@@ -1,0 +1,222 @@
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <!-- Our css -->
+    <title>FAQ</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            background-image: url('images/burger.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height:100% !important;
+            width: 100% !important;
+            background-attachment: fixed;
+        }
+
+        .card {
+        box-shadow: 0px 5px 10px #000000;
+        border-radius: 25px 25px 25px 25px;
+        }
+        
+        .fa-question-circle {
+        font-size: 2rem;
+        color: #FFC600;
+        }
+
+        i {
+            position: relative;
+            left: -9px;
+            color: #FFC600;
+        }
+        
+        .card-subtitle {
+        font-family: Impact, Charcoal, sans-serif;
+        color: #31261B !important;
+        text-align: center;
+        }
+        
+        .hr-yellow-border {
+        border: 2px solid #FFC600;
+        }
+        
+        .card-text {
+        color: #315470 !important;
+        font-family: Impact, Charcoal, sans-serif;
+        text-transform: uppercase;
+        }
+        
+        .hr-grey-border {
+        border: 2px solid #AB989D;
+        }
+        
+        .labels-text {
+        font-family: Impact, Charcoal, sans-serif;
+        text-transform: uppercase;
+        }
+        
+        .labels-wrapper {
+        background-color: #315470;
+        color:white;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.4s
+        }
+        
+        div.col-11>.panel>p {
+        font-size: small;
+        }
+        
+        .plus-icon {
+        cursor: pointer;
+        display: inline;
+        }
+        
+        .panel {
+        display: block;
+        transition: 0.4s;
+        height:0;
+        overflow:hidden
+        }
+    </style>
+</head>
+<body>
+    <div style="position:absolute;height:100vh;width:100%">
+
+        <div class='background-img'></div>
+    </div>
+    <div class="container-fluid d-flex justify-content-center align-items-center content">
+        <div class="col-9">
+            <br>
+            <div class="card" style="height: min-content;">
+                <div class="card-body">
+                    <i class="fas fa-question-circle d-flex justify-content-center mb-3"></i>
+                    <h1 class="card-subtitle mb-2 text-muted d-flex justify-content-center"><strong>FREQUENTLY ASKED QUESTIONS</strong></h1>
+                    <div class="col-11 mx-auto">
+                        <hr class="hr-yellow-border">
+                        <br>
+                        <div class="labels-wrapper d-flex justify-content-between">
+                            <h5 class="ml-2 labels-text my-auto"> How do I access the event on the day of the conference?</h5>
+                            <i class="fas fa-plus"></i>
+                          </div>
+                        <div class="panel">
+                            <hr class="hr-grey-border">
+                            <p class="ml-3">On October 15, 2020 at 10:00 AM EST, the login button will accept your registration credentials to access the online platform</p>
+                        </div>
+                        <br>
+
+                        <div class="labels-wrapper d-flex justify-content-between">
+                            <h5 class="ml-2 labels-text my-auto">  Do I need to download or install any information to be able to attend this event?</h5>
+                            <i class="fas fa-plus"></i>
+                          </div>
+                        <div class="panel">
+                            <hr class="hr-grey-border">
+                            <p class="ml-3">On October 15, 2020 at 10:00 AM EST, the login button will accept your registration credentials to access the online platform</p>
+                        </div>
+
+                        <br>
+
+                        <div class="labels-wrapper d-flex justify-content-between">
+                            <h5 class="ml-2 labels-text my-auto">  Where will the event be held?</h5>
+                            <i class="fas fa-plus"></i>
+                          </div>
+                        <div class="panel">
+                            <hr class="hr-grey-border">
+                            <p class="ml-3">On October 15, 2020 at 10:00 AM EST, the login button will accept your registration credentials to access the online platform</p>
+                        </div>
+
+                        <br>
+
+                        <div class="labels-wrapper d-flex justify-content-between">
+                            <h5 class="ml-2 labels-text my-auto">  What is the preferred browser?</h5>
+                            <i class="fas fa-plus"></i>
+                          </div>
+                        <div class="panel">
+                            <hr class="hr-grey-border">
+                            <p class="ml-3">On October 15, 2020 at 10:00 AM EST, the login button will accept your registration credentials to access the online platform</p>
+                        </div>
+
+                        <br>
+                       
+                        <div class="labels-wrapper d-flex justify-content-between">
+                            <h5 class="ml-2 labels-text my-auto">Who do I contact if I have issues before or during the event?</h5>
+                            <i class="fas fa-plus"></i>
+                          </div>
+                        <div class="panel">
+                            <hr class="hr-grey-border">
+                            <p class="ml-3">On October 15, 2020 at 10:00 AM EST, the login button will accept your registration credentials to access the online platform</p>
+                        </div>
+
+                            </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+
+<!-- Bootstrap and jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+    var acc = document.getElementsByClassName("labels-wrapper");  
+
+    for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+
+        /* Toggle between hiding and showing the active panel */
+
+        var panel = this.nextElementSibling;
+        if (panel.style.height == "" || panel.style.height === "0px") {
+        panel.style.height = "90px";
+        } else {
+        panel.style.height = "0px";
+        }
+
+        const icon = this.lastElementChild
+        let oldClass = "fa-plus"
+        let newClass = "fa-minus"
+        if (icon.classList.contains("fa-minus")) {
+            oldClass = "fa-minus"
+            newClass = "fa-plus"
+        } 
+
+        icon.classList.remove(oldClass);
+        icon.classList.add(newClass)
+
+        let color1 = "#315470"
+        let color2 = "white"
+        if (this.style.color == "" || this.style.color =="white") {
+            color1 = "white"
+            color2 = "#315470"
+        }
+        this.style.color = color2;
+        this.style.backgroundColor = color1;
+
+
+        
+    });
+    }
+
+</script>
+<script>
+   
+</script>
+</body>
+</html>
