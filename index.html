@@ -38,7 +38,7 @@
         }
 
         .navbar.navbar-dark .navbar-toggler-icon{
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 110, 11, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%231d3557' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
         }
 
         .navbar.navbar-dark .breadcrumb .nav-item .nav-link, .navbar.navbar-dark .navbar-nav .nav-item .nav-link{
@@ -70,6 +70,9 @@
             color: var(--shocklogic-hover);
         }
 
+        .navbar-toggler{
+            box-shadow: none !important;
+        }
         /*--------------------------------------------------------------*/
         .presentatation-card{
             background: linear-gradient(#d9ed92,#52b69a);
@@ -91,6 +94,10 @@
             border-radius: 30px;
             background: #313638;
             color: white;
+        }
+        .contact-btn:hover{
+            background: #495057;
+
         }
         .social-media-btn{
             border-radius: 50%;
@@ -142,10 +149,10 @@
 </head>
 <body>
 <div class="container">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-white d-flex justify-content-end">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-white d-flex justify-content-between">
         <!-- Navbar brand -->
-        <div class="d-none d-sm-block">
-            Hilery Guedez
+        <div class="d-sm-block">
+            <i class="fas fa-circle" style="color: #1d3557;"></i> Hilery Guedez
         </div>
             <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -243,32 +250,47 @@
         </div>
     </div>
     <div class="row d-flex justify-content-between mt-4" id="projects">
-        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
-            <div class="card project-card p-3 mt-3" style="background: #ffba08" onclick="showPages('FAQ.html')">
-                <div class="card-body">
-                    <h5 class="card-subtitle mb-2 text-white"> FAQ Template</h5>
-                    <p>Non-mobile first template made for a client that needed an faq interface</p>
-                    <div class="d-flex justify-content-center">
-                        <img src="images/faq.png" class="img-fluid " width="60%">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
+        <!-- <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
             <div class="card project-card p-3 mt-3" style="background: linear-gradient(to right, #c43e00, #ff6f00);" onclick="showPages('enquiryForm.html')">
                 <div class="card-body">
-                    <h5 class="card-subtitle mb-2 text-white"> Enquiry form</h5>
+                    <h5 class="card-subtitle mb-2 text-white text-center"> Enquiry form template <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="Final project was made with: HTML,CSS,JS,jQuery,Laravel"></i></h5>
                     <p>Form for getting users interets</p>
                     <div class="d-flex justify-content-center">
-                        <img src="images/webenquiryform.png" class="img-fluid " width="60%">
+                        <img src="images/webenquiryform.png" class="img-fluid " width="55%">
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
+            <div class="card project-card p-3 mt-3" style="background: linear-gradient(to right, #c43e00, #ff6f00);" onclick="showPages('enquiryForm.html')">
+                <div class="card-body d-flex flex-column p-3">
+                    <h5 class="card-subtitle mb-2 text-white "> Enquiry form template <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="Final project was made with: HTML,CSS,JS,jQuery,Laravel"></i></h5>
+                    <p>Form for getting users interets</p>
+                    <div class="d-flex justify-content-center mt-auto">
+                        <img src="images/webenquiryform.png" class="img-fluid " width="55%">
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
-            <div class="card project-card p-3 mt-3">
-                <div class="card-body">
-                    Hello
+            <div class="card project-card p-3 mt-3" style="background: #d00000" onclick="showPages('sessionAssigment.html')">
+                <div class="card-body flex-column p-3">
+                    <h5 class="card-subtitle mb-2 text-white "> Session assign template <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="Final project was made with: HTML,CSS,JS,Laravel"></i></h5>
+                    <p>Assign persons to a session e.g: Movie, Song,...</p>
+                    <div class="d-flex justify-content-center mt-auto">
+                        <img src="images/movie.png" class="img-fluid " width="55%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
+            <div class="card project-card p-3 mt-3" style="background: #ffba08" onclick="showPages('FAQ.html')">
+                <div class="card-body flex-column p-3">
+                    <h5 class="card-subtitle mb-2 text-white "> FAQ template <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="Final project was made with: HTML,CSS,JS,PHP"></i></h5>
+                    <p>Non-mobile first template made for a client that needed an faq interface</p>
+                    <div class="d-flex justify-content-center mt-auto">
+                        <img src="images/faq.png" class="img-fluid " width="55%">
+                    </div>
                 </div>
             </div>
         </div>
@@ -288,6 +310,9 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
+    $( document ).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
     function showPages(url){
         window.open(url,'_blank');
     }
