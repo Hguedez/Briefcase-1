@@ -132,8 +132,34 @@
         .project-card:hover{
             transform: scaleY(1.05) scaleX(1.05);
         }
-        /* Small devices (landscape phones, 576px and up) */
-        
+        .tools-wrapper{
+            width: fit-content;
+            box-shadow: 3px 3px 5px #0000001A;
+            border: 2px solid #DADCE0 ;
+            border-radius: 25px;
+            padding-right: 5px;
+            padding-left: 5px;
+            margin-top: 5px;
+
+        }
+        .fa-html5{
+            color: #E34C26;
+        }
+        .fa-css3-alt{
+            color: #264de4;
+        }
+        .fa-js-square{
+            color: #F0DB4F;
+        }
+        .fa-laravel{
+            color: #F05340;
+        }
+        .fa-angular{
+            color: #dd1b16;
+        }
+        .fa-php{
+            color: #777BB3;
+        }
         /* Medium devices (tablets, 768px and up) */
         @media (max-width: 768px) {
             .contact-btn{
@@ -152,7 +178,7 @@
     <nav class="navbar navbar-expand-sm navbar-dark bg-white d-flex justify-content-between">
         <!-- Navbar brand -->
         <div class="d-sm-block">
-            <i class="fas fa-circle" style="color: #1d3557;"></i> Hilery Guedez
+            <i class="fas fa-circle" style="color: #52b69a;"></i> Hilery Guedez
         </div>
             <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -250,48 +276,69 @@
         </div>
     </div>
     <div class="row d-flex justify-content-between mt-4" id="projects">
-        <!-- <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
-            <div class="card project-card p-3 mt-3" style="background: linear-gradient(to right, #c43e00, #ff6f00);" onclick="showPages('enquiryForm.html')">
-                <div class="card-body">
-                    <h5 class="card-subtitle mb-2 text-white text-center"> Enquiry form template <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="Final project was made with: HTML,CSS,JS,jQuery,Laravel"></i></h5>
-                    <p>Form for getting users interets</p>
-                    <div class="d-flex justify-content-center">
-                        <img src="images/webenquiryform.png" class="img-fluid " width="55%">
+        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center flex-column">
+            <div class="card project-card p-3 mt-3" style="background: linear-gradient(to right, #c43e00, #ff6f00);" >
+                <div class="card-body d-flex flex-column p-3">
+                    <h5 class="card-subtitle mb-2 text-white "> Scanlogic app</h5>
+                    <p>PWA for scanning persons that want to enter to activites like: a room of a theater</p>
+                    <div class="d-flex justify-content-center mt-auto">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5371/5371682.png" class="img-fluid " width="55%">
                     </div>
                 </div>
             </div>
-        </div> -->
-        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
-            <div class="card project-card p-3 mt-3" style="background: linear-gradient(to right, #c43e00, #ff6f00);" onclick="showPages('enquiryForm.html')">
-                <div class="card-body d-flex flex-column p-3">
-                    <h5 class="card-subtitle mb-2 text-white "> Enquiry form template <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="Final project was made with: HTML,CSS,JS,jQuery,Laravel"></i></h5>
-                    <p>Form for getting users interets</p>
-                    <div class="d-flex justify-content-center mt-auto">
-                        <img src="images/webenquiryform.png" class="img-fluid " width="55%">
-                    </div>
-                </div>
+            <div class="tools-wrapper">
+                <i class="fab fa-angular"></i>
+                <i class="fab fa-php"></i>
             </div>
         </div>
-        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
+        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center flex-column">
             <div class="card project-card p-3 mt-3" style="background: #d00000" onclick="showPages('sessionAssigment.html')">
-                <div class="card-body flex-column p-3">
-                    <h5 class="card-subtitle mb-2 text-white "> Session assign template <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="Final project was made with: HTML,CSS,JS,Laravel"></i></h5>
+                <div class="card-body d-flex flex-column p-3">
+                    <h5 class="card-subtitle mb-2 text-white "> Session assign template </h5>
                     <p>Assign persons to a session e.g: Movie, Song,...</p>
                     <div class="d-flex justify-content-center mt-auto">
                         <img src="images/movie.png" class="img-fluid " width="55%">
                     </div>
                 </div>
             </div>
+            <div class="tools-wrapper">
+                <i class="fab fa-html5 html-logo"></i>
+                <i class="fab fa-css3-alt"></i>
+                <i class="fab fa-js-square"></i>
+                <i class="fab fa-laravel"></i>
+            </div>
         </div>
-        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
+        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center flex-column">
+            <div class="card project-card p-3 mt-3" style="background: #f3722c;" onclick="showPages('enquiryForm.html')">
+                <div class="card-body d-flex flex-column p-3">
+                    <h5 class="card-subtitle mb-2 text-white "> Enquiry form template </h5>
+                    <p>Form for getting users interets</p>
+                    <div class="d-flex justify-content-center mt-auto">
+                        <img src="images/webenquiryform.png" class="img-fluid " width="55%">
+                    </div>
+                </div>
+            </div>
+            <div class="tools-wrapper">
+                <i class="fab fa-html5"></i>
+                <i class="fab fa-css3-alt"></i>
+                <i class="fab fa-js-square"></i>
+                <i class="fab fa-laravel"></i>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center flex-column">
             <div class="card project-card p-3 mt-3" style="background: #ffba08" onclick="showPages('FAQ.html')">
-                <div class="card-body flex-column p-3">
-                    <h5 class="card-subtitle mb-2 text-white "> FAQ template <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="Final project was made with: HTML,CSS,JS,PHP"></i></h5>
+                <div class="card-body d-flex flex-column p-3">
+                    <h5 class="card-subtitle mb-2 text-white "> FAQ template </h5>
                     <p>Non-mobile first template made for a client that needed an faq interface</p>
                     <div class="d-flex justify-content-center mt-auto">
                         <img src="images/faq.png" class="img-fluid " width="55%">
                     </div>
                 </div>
+            </div>
+            <div class="tools-wrapper">
+                <i class="fab fa-html5"></i>
+                <i class="fab fa-css3-alt"></i>
+                <i class="fab fa-js-square"></i>
             </div>
         </div>
     </div>
