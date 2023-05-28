@@ -108,6 +108,9 @@
             display:block;
             width: 50px;
             height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .instagram:hover{
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
@@ -167,7 +170,7 @@
             top: 50%; 
             color: white;
             font-weight: 500;
-            margin-top: -0.875rem;
+            margin-top: -1.875rem;
         }
         .thumb-content::before {
             content: "";
@@ -186,6 +189,12 @@
         }
         .thumb-content:hover ~ .card-body .card-subtitle {
             display: none;
+        }
+        .card-subtitle p {
+            font-size: 15px;
+        }
+        .project-card .card-body{
+            height: 180px;
         }
         /* Medium devices (tablets, 768px and up) */
         @media (max-width: 768px) {
