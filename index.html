@@ -18,6 +18,16 @@
     <title>Hilery Guedez Portfolio</title>
     <style>
         body{
+            
+            display: flex;
+            align-items: center;
+            background-image: url('images/website-bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            /*height:100% !important;
+            width: 100% !important;*/
+            background-attachment: fixed;
             font-family: 'Nunito Sans', sans-serif !important;
         }
        /*----------------------------Navbar styles---------------------*/
@@ -311,7 +321,12 @@
             <img src="images/Hilery_foto_white_background.jpg" class="profil-img">
         </div>
     </div>
-    <div class="row d-flex justify-content-between mt-4" id="projects">
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+            <p style="font-style: italic;">All the projects listed below were undertaken for personal, educational, and professional purposes, for the company Shocklogic.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-between mt-1" id="projects">
         <div class="col-12 col-lg-4 col-md-6 d-flex justify-content-center flex-column">
             <div class="card project-card mt-3" onclick="showPages('sessionAssigment.html')">
                 <div class="thumb-content text-center">
@@ -324,6 +339,7 @@
             </div>
             <div class="tools-wrapper">
                 <i class="devicon-angularjs-plain colored" data-toggle="tooltip" data-placement="bottom" title="Angular"></i>
+                <i class="devicon-typescript-plain colored"></i>
                 <i class="devicon-php-plain colored" data-toggle="tooltip" data-placement="bottom" title="PHP"></i>
             </div>
         </div>
@@ -339,6 +355,7 @@
             </div>
             <div class="tools-wrapper">
                 <i class="devicon-angularjs-plain colored" data-toggle="tooltip" data-placement="bottom" title="Angular"></i>
+                <i class="devicon-typescript-plain colored"></i>
                 <i class="devicon-php-plain colored" data-toggle="tooltip" data-placement="bottom" title="PHP"></i>
             </div>
         </div>
@@ -354,6 +371,8 @@
             </div>
             <div class="tools-wrapper">
                 <i class="devicon-ionic-original colored"></i>
+                <i class="devicon-angularjs-plain colored" data-toggle="tooltip" data-placement="bottom" title="Angular"></i>
+                <i class="devicon-typescript-plain colored"></i>
                 <i class="devicon-firebase-plain colored"></i>
             </div>
         </div>
@@ -379,6 +398,21 @@
                 </div>
                 <div class="card-body d-flex flex-column p-3">
                     <h5 class="card-subtitle mb-2"> Enquiry form template </h5>
+                    <p>Form for getting users interets</p>
+                </div>
+            </div>
+            <div class="tools-wrapper">
+                <i class="devicon-javascript-plain colored"></i>
+                <i class="devicon-laravel-plain colored"></i>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 col-md-6 d-flex justify-content-center flex-column">
+            <div class="card project-card mt-3" onclick="showPages('enquiryForm.html')">
+                <div class="thumb-content">
+                    <img class="card-img-top img-fluid" src="images/web_dashboard.png" alt="Card image cap">
+                </div>
+                <div class="card-body d-flex flex-column p-3">
+                    <h5 class="card-subtitle mb-2"> Enquiry form dashboard template </h5>
                     <p>Form for getting users interets</p>
                 </div>
             </div>
