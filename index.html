@@ -21,7 +21,7 @@
             
             display: flex;
             align-items: center;
-            background-image: url('images/website-bg.jpg');
+            background-image: url('images/_3qu79.gif');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -90,6 +90,7 @@
             background: linear-gradient(#d9ed92,#52b69a);
             border-radius: 25px;
             border: none;
+            height: -webkit-fill-available;
         }
         button{
             text-align: center;
@@ -132,9 +133,10 @@
         }
         .profil-img{
             border-radius: 50%;
+            border: 5px solid #E9E9E9;
             display:block;
-            width: 230px;
-            height: 230px;
+            width: 200px;
+            height: 200px;
         }
         .project-card {
             width: 100%;
@@ -215,6 +217,9 @@
                 display: flex;
                 justify-content: center;
                 margin-top: 10px;
+            }
+             .d-xs-none{
+                display: none !important;
             }
         }
     </style>
@@ -317,8 +322,11 @@
               </div>
             </div>
         </div>
-        <div class="col-12 col-lg-4 col-md-4 d-flex align-items-center justify-content-center">
-            <img src="images/Hilery_foto_white_background.jpg" class="profil-img">
+        <div class="col-12 col-lg-4 col-md-4 d-flex align-items-center justify-content-center d-xs-none">
+            <div class="card w-100 presentatation-card">
+                <img src="images/Hilery_foto_white_background.jpg" class="profil-img mx-auto mt-3">
+                <div class="text-center my-auto text-white">“In a world that’s changing really quickly, the only strategy that is guaranteed to fail is not taking risks.”</div>
+            </div>
         </div>
     </div>
     <div class="row mt-5">
@@ -432,12 +440,39 @@
                 </div>
             </div>
             <div class="tools-wrapper">
-                <i class="fab fa-html5"></i>
-                <i class="fab fa-css3-alt"></i>
-                <i class="fab fa-js-square"></i>
+                <i class="devicon-html5-plain colored"></i>
+                <i class="devicon-css3-plain colored"></i>
+                <i class="devicon-javascript-plain colored"></i>
             </div>
         </div>
     </div>
+    <div class="row mt-3" id="contact">
+        <div class="col-12">
+            <div class="card w-100 presentatation-card">
+                <div class="card-body">
+                    <h3 class="mt-2">Want to work together?</h3>
+                    <h5 class="mt-4">If you have a project in mind or just want to say hi, feel free to reach out to me. I’m always happy to connect and explore new opportunities</h5>
+                    <h5 class="mt-4">hileryguedez@gmail.com</h5>
+                    <div class="row d-flex align-items-center" style="margin-top: 80px;">
+                        <div class="col-12 col-lg-2 col-md-3 mr-3">
+                            <button class="contact-btn px-5 py-2" onclick="sendEmail()">Contact</button>
+                        </div>
+                        <div class="col-12 col-lg-8 col-md-6">
+                            <div class="row wrap-social-media">
+                                <div class="col-3 col-lg-1 col-md-2 col-sm-2">
+                                    <button class="social-media-btn instagram mx-auto" onclick="showPages('https://www.instagram.com/hguedez21/')"><i class="fab fa-instagram fa-lg"></i></button>
+                                </div>
+                                <div class="col-3 col-lg-2 col-md-3 col-sm-2 ">
+                                    <button class="social-media-btn linkedin mx-auto" onclick="showPages('https://www.linkedin.com/in/hilery-guedez')"><i class="fab fa-linkedin fa-lg"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
 </div>
 
 <!-- Bootstrap and jQuery -->
