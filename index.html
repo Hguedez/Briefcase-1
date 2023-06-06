@@ -214,6 +214,23 @@
         .w-footer-contact{
             width: 50%;
         }
+        .modal-header{
+            background: #272727;
+            border-bottom: none;
+        }
+        .modal-body{
+            background-color: #303030;
+        }
+        .close{
+            font-weight: 100;
+            text-shadow: none;
+        }
+        .close span {
+            color: white;
+            background-color: #6B6B6B;
+            border-radius: 50%;
+            padding: 0 5px;
+        }
         /* Medium devices (tablets, 768px and up) */
         @media (max-width: 768px) {
             .contact-btn{
@@ -228,7 +245,7 @@
                 display: none !important;
             }
             .w-footer-contact{
-                width: 100%;
+                width: auto;
             }
         }
     </style>
@@ -345,7 +362,7 @@
     </div>
     <div class="row d-flex justify-content-between mt-1" id="projects">
         <div class="col-12 col-lg-4 col-md-6 d-flex justify-content-center flex-column">
-            <div class="card project-card mt-3" onclick="showPages('sessionAssigment.html')">
+            <div class="card project-card mt-3" onclick="showModal('Scanlogic','This PWA streamlines ticket scanning for events with features such as access control, compatibility with mobile devices, and the ability to scan barcodes and QR codes.','https://www.youtube.com/embed/x3AxGp9Rau8')">
                 <div class="thumb-content text-center">
                     <img class="w-fit card-img-top img-fluid" src="images/scanlogic.png" alt="Card image cap">
                 </div>
@@ -483,7 +500,23 @@
     </div>
     <br>
 </div>
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-white" id="exampleModalLabel">Modal title</h5>
+          <a type="button" class="close d-flex" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </a>
+        </div>
+        <div class="modal-body">
+            <iframe id="iframe-video" style="width: 100%;height: 270px;" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            <div class="text-white modal-description"></div>
+        </div>
+      </div>
+    </div>
+</div>
 <!-- Bootstrap and jQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
 
@@ -502,6 +535,12 @@
     });
     function showPages(url){
         window.open(url,'_blank');
+    }
+    function showModal(title, description, url){
+        $('.modal-title').text(title)
+        $('#iframe-video').attr('src', url);
+        $('.modal-description').text(description)
+        $('#exampleModal').modal()
     }
     function sendEmail() {
         window.location.href = "mailto:hileryguedez@gmail.com";
