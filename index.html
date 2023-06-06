@@ -133,7 +133,7 @@
         }
         .profil-img{
             border-radius: 50%;
-            border: 5px solid #E9E9E9;
+            border: 5px solid #F1F1F1;
             display:block;
             width: 200px;
             height: 200px;
@@ -208,6 +208,12 @@
         .project-card .card-body{
             height: 180px;
         }
+        .navbar{
+            background: none !important;
+        }
+        .w-footer-contact{
+            width: 50%;
+        }
         /* Medium devices (tablets, 768px and up) */
         @media (max-width: 768px) {
             .contact-btn{
@@ -220,6 +226,9 @@
             }
              .d-xs-none{
                 display: none !important;
+            }
+            .w-footer-contact{
+                width: 100%;
             }
         }
     </style>
@@ -446,29 +455,29 @@
             </div>
         </div>
     </div>
-    <div class="row mt-3" id="contact">
+    <div class="row d-flex justify-content-between mt-3" id="contact">
         <div class="col-12">
-            <div class="card w-100 presentatation-card">
-                <div class="card-body">
-                    <h3 class="mt-2">Want to work together?</h3>
-                    <h5 class="mt-4">If you have a project in mind or just want to say hi, feel free to reach out to me. I’m always happy to connect and explore new opportunities</h5>
-                    <h5 class="mt-4">hileryguedez@gmail.com</h5>
-                    <div class="row d-flex align-items-center" style="margin-top: 80px;">
-                        <div class="col-12 col-lg-2 col-md-3 mr-3">
-                            <button class="contact-btn px-5 py-2" onclick="sendEmail()">Contact</button>
-                        </div>
-                        <div class="col-12 col-lg-8 col-md-6">
-                            <div class="row wrap-social-media">
-                                <div class="col-3 col-lg-1 col-md-2 col-sm-2">
-                                    <button class="social-media-btn instagram mx-auto" onclick="showPages('https://www.instagram.com/hguedez21/')"><i class="fab fa-instagram fa-lg"></i></button>
-                                </div>
-                                <div class="col-3 col-lg-2 col-md-3 col-sm-2 ">
-                                    <button class="social-media-btn linkedin mx-auto" onclick="showPages('https://www.linkedin.com/in/hilery-guedez')"><i class="fab fa-linkedin fa-lg"></i></button>
-                                </div>
+            <div class="card w-100 presentatation-card p-3">
+              <div class="card-body">
+                <h3 class="mt-2">Want to work together?</h3>
+                <h5 class="mt-4">If you have a project in mind or just want to say hi, feel free to reach out to me. I’m always happy to connect and explore new opportunities</h5>
+                <h5 class="mt-4">hileryguedez@gmail.com</h5>
+                <div class="row mt-5 d-flex align-items-center w-footer-contact">
+                    <div class="col-12 col-lg-4 col-md-6 mr-3">
+                        <button class="contact-btn px-5 py-2" onclick="sendEmail()">Contact</button>
+                    </div>
+                    <div class="col-12 col-lg-7 col-md-5">
+                        <div class="row wrap-social-media">
+                            <div class="col-3 col-lg-3 col-md-6 col-sm-2">
+                                <button class="social-media-btn instagram mx-auto" onclick="showPages('https://www.instagram.com/hguedez21/')"><i class="fab fa-instagram fa-lg"></i></button>
+                            </div>
+                            <div class="col-3 col-lg-2 col-md-4 col-sm-2 ">
+                                <button class="social-media-btn linkedin mx-auto" onclick="showPages('https://www.linkedin.com/in/hilery-guedez')"><i class="fab fa-linkedin fa-lg"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
+              </div>
             </div>
         </div>
     </div>
