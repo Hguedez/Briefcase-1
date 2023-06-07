@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="-1">
@@ -231,6 +232,15 @@
             border-radius: 50%;
             padding: 0 5px;
         }
+        .tippy-box[data-theme~='angular'] {background-color: #B52E31;}
+        .tippy-box[data-theme~='typescript'] {background-color: #007acc;}
+        .tippy-box[data-theme~='php'] {background-color: #8993be;}
+        .tippy-box[data-theme~='ionic'] {background-color: #498aff;}
+        .tippy-box[data-theme~='firebase']{background: linear-gradient(to right, #FFA611, #F5820D, #FFCB2B);}
+        .tippy-box[data-theme~='javascript'] {background-color: #f0db4f;}
+        .tippy-box[data-theme~='laravel'] {background-color: #fb503b;}
+        .tippy-box[data-theme~='html'] {background: linear-gradient(to right,#E34C26, #F06529);}
+        .tippy-box[data-theme~='css'] {background-color: #2965f1;}
         /* Medium devices (tablets, 768px and up) */
         @media (max-width: 768px) {
             .contact-btn{
@@ -362,7 +372,7 @@
     </div>
     <div class="row d-flex justify-content-between mt-1" id="projects">
         <div class="col-12 col-lg-4 col-md-6 d-flex justify-content-center flex-column">
-            <div class="card project-card mt-3" onclick="showModal('Scanlogic','This PWA streamlines ticket scanning for events with features such as access control, compatibility with mobile devices, and the ability to scan barcodes and QR codes.','https://www.youtube.com/embed/x3AxGp9Rau8')">
+            <div class="card project-card mt-3" onclick="showModal('Scanlogic','This PWA streamlines ticket scanning for events with features such as access control, compatibility with mobile devices, quickly capture of the data minimizing the  queues, track session attendance, and the ability to scan barcodes and QR codes.','https://www.youtube.com/embed/x3AxGp9Rau8')">
                 <div class="thumb-content text-center">
                     <img class="w-fit card-img-top img-fluid" src="images/scanlogic.png" alt="Card image cap">
                 </div>
@@ -372,9 +382,9 @@
                 </div>
             </div>
             <div class="tools-wrapper">
-                <i class="devicon-angularjs-plain colored" data-toggle="tooltip" data-placement="bottom" title="Angular"></i>
+                <i class="devicon-angularjs-plain colored" ></i>
                 <i class="devicon-typescript-plain colored"></i>
-                <i class="devicon-php-plain colored" data-toggle="tooltip" data-placement="bottom" title="PHP"></i>
+                <i class="devicon-php-plain colored" ></i>
             </div>
         </div>
         <div class="col-12 col-lg-4 col-md-6 d-flex justify-content-center flex-column">
@@ -388,13 +398,13 @@
                 </div>
             </div>
             <div class="tools-wrapper">
-                <i class="devicon-angularjs-plain colored" data-toggle="tooltip" data-placement="bottom" title="Angular"></i>
+                <i class="devicon-angularjs-plain colored"></i>
                 <i class="devicon-typescript-plain colored"></i>
-                <i class="devicon-php-plain colored" data-toggle="tooltip" data-placement="bottom" title="PHP"></i>
+                <i class="devicon-php-plain colored" ></i>
             </div>
         </div>
         <div class="col-12 col-lg-4 col-md-6 d-flex justify-content-center flex-column">
-            <div class="card project-card mt-3" onclick="showPages('sessionAssigment.html')">
+            <div class="card project-card mt-3" onclick="showModal('FNC','This hybrid app allows registered users to manage events and appointments. Users can view a calendar with planned events by the institution and create personalized appointments.','https://www.youtube.com/embed/0AWKB6Is1NY')">
                 <div class="thumb-content text-center">
                     <img class="w-fit card-img-top img-fluid" src="images/fnc.png" alt="Card image cap">
                 </div>
@@ -405,7 +415,7 @@
             </div>
             <div class="tools-wrapper">
                 <i class="devicon-ionic-original colored"></i>
-                <i class="devicon-angularjs-plain colored" data-toggle="tooltip" data-placement="bottom" title="Angular"></i>
+                <i class="devicon-angularjs-plain colored" ></i>
                 <i class="devicon-typescript-plain colored"></i>
                 <i class="devicon-firebase-plain colored"></i>
             </div>
@@ -517,6 +527,9 @@
       </div>
     </div>
 </div>
+<!-- Production -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
 <!-- Bootstrap and jQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
 
@@ -531,7 +544,69 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     $( document ).ready(function() {
-        $('[data-toggle="tooltip"]').tooltip()
+        tippy('.devicon-angularjs-plain', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'Angular',
+            theme: 'angular',
+            animation: 'scale',
+        });
+        tippy('.devicon-typescript-plain', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'Typescript',
+            theme: 'typescript',
+            animation: 'scale',
+        });
+        tippy('.devicon-php-plain', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'php',
+            theme: 'php',
+            animation: 'scale',
+        });
+        tippy('.devicon-ionic-original', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'Ionic',
+            theme: 'ionic',
+            animation: 'scale',
+        });
+        tippy('.devicon-firebase-plain', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'Firebase',
+            theme: 'firebase',
+            animation: 'scale',
+        });
+        tippy('.devicon-javascript-plain', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'Javascript',
+            theme: 'javascript',
+            animation: 'scale',
+        });
+        tippy('.devicon-laravel-plain', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'Laravel',
+            theme: 'laravel',
+            animation: 'scale',
+        });
+        tippy('.devicon-html5-plain', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'Html',
+            theme: 'html',
+            animation: 'scale',
+        });
+        tippy('.devicon-css3-plain', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'Css',
+            theme: 'css',
+            animation: 'scale',
+        });
     });
     function showPages(url){
         window.open(url,'_blank');
