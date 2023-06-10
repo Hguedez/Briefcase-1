@@ -242,6 +242,10 @@
         .tippy-box[data-theme~='laravel'] {background-color: #fb503b;}
         .tippy-box[data-theme~='html'] {background: linear-gradient(to right,#E34C26, #F06529);}
         .tippy-box[data-theme~='css'] {background-color: #2965f1;}
+        .tippy-box[data-theme~='django'] {background-color: #092e20;}
+        .tippy-box[data-theme~='python'] {background: linear-gradient(to right, #4B8BBE, #306998);}
+        .tippy-box[data-theme~='pentaho'] {background-color: #015CA5;}
+        .tippy-box[data-theme~='powerbi'] {background-color: #F2CF43;}
         /* Medium devices (tablets, 768px and up) */
         @media (max-width: 768px) {
             .contact-btn{
@@ -257,6 +261,12 @@
             }
             .w-footer-contact{
                 width: auto;
+            }
+            .card-title {
+                font-size: x-large;
+            }
+            .card-sub{
+                font-size: large;
             }
         }
     </style>
@@ -338,9 +348,9 @@
     <div class="row d-flex justify-content-between" id="profile">
         <div class="col-12 col-lg-8 col-md-8">
             <div class="card w-100 presentatation-card p-3">
-              <div class="card-body">
+              <div class="card-body ">
                 <h2 class="card-title"><strong>Hello, I'm Hilery Guedez a Software engineer with 3+ years of experience in software development</strong> </h2>
-                <h4 class=" mb-2 mt-4"> I have a proven track record of designing and implementing software solutions to improve performance and efficiency</h4>
+                <h4 class="card-sub mb-2 mt-4"> I have a proven track record of designing and implementing software solutions to improve performance and efficiency</h4>
                 <div class="row mt-5 d-flex align-items-center">
                     <div class="col-12 col-lg-3 col-md-5 mr-3">
                         <button class="contact-btn px-5 py-2" onclick="sendEmail()">Contact</button>
@@ -389,7 +399,26 @@
             </div>
         </div>
         <div class="col-12 col-lg-4 col-md-6 d-flex justify-content-center flex-column">
-            <div class="card project-card mt-3" onclick="showPages('sessionAssigment.html')">
+            <div class="card project-card mt-3" onclick="showModal('Chatbot','Business intelligence system with a hybrid chatbot for personalized customer service and license acquisition automation. The software includes an OLAP analytical solution system with a real-time dashboard to aid the Marketing Department in decision-making. Objectives include designing and implementing the chatbot, DataMarts, ETL processes, REST API, license payment module, and natural language processing algorithms.','https://www.youtube.com/embed/3qcKYn8ck6w')">
+                <div class="thumb-content text-center">
+                    <img class="w-fit card-img-top img-fluid" src="images/chatbot.png" alt="Card image cap">
+                </div>
+                <div class="card-body d-flex flex-column p-3">
+                    <h5 class="card-subtitle mb-2">Chatbot based on BI</h5>
+                    <p>Hybrid chatbot that uses natural language processing to handle and “understand” user messages and offer personalized attention. Featured with an OLAP analytical solution</p>
+                </div>
+            </div>
+            <div class="tools-wrapper">
+                <i class="devicon-angularjs-plain colored" ></i>
+                <i class="devicon-typescript-plain colored"></i>
+                <i class="devicon-django-plain colored"></i>
+                <img class="python-logo mr-2" style="width: 20px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+                <img class="pentaho-logo" style="width: 20px;" src="https://superfarb.com/wp-content/uploads/2018/09/pentaho_logo_1.png" />
+                <img class="powerbi-logo" style="width: 30px;" src="https://powerbi.microsoft.com/pictures/shared/social/social-default-image.png" />
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 col-md-6 d-flex justify-content-center flex-column">
+            <div class="card project-card mt-3" onclick="showModal('Leadlogic','This PWA is a powerful lead capture solution for exhibitors, that will eliminate the need to collect business cards or contact details on paper.','https://www.youtube.com/embed/7A61FqHW4fw')">
                 <div class="thumb-content text-center">
                     <img class="w-fit card-img-top img-fluid" src="images/leadlogic.png" alt="Card image cap">
                 </div>
@@ -437,12 +466,12 @@
             </div>
         </div>
         <div class="col-12 col-lg-4 col-md-6 d-flex justify-content-center flex-column">
-            <div class="card project-card mt-3" onclick="showPages('enquiryForm.html')">
+            <div class="card project-card mt-3" onclick="showPages('https://shocklogic.com/contact-us/')">
                 <div class="thumb-content">
                     <img class="card-img-top img-fluid" src="images/enquiryform.png" alt="Card image cap">
                 </div>
                 <div class="card-body d-flex flex-column p-3">
-                    <h5 class="card-subtitle mb-2"> Enquiry form template </h5>
+                    <h5 class="card-subtitle mb-2"> Enquiry form </h5>
                     <p>This form captures user data and interests, allowing companies to connect with potential clients. This form provides an efficient and effective way for businesses to reach their target audience.</p>
                 </div>
             </div>
@@ -487,9 +516,9 @@
         <div class="col-12">
             <div class="card w-100 presentatation-card p-3">
               <div class="card-body">
-                <h3 class="mt-2">Want to work together?</h3>
-                <h5 class="mt-4">If you have a project in mind or just want to say hi, feel free to reach out to me. I’m always happy to connect and explore new opportunities</h5>
-                <h5 class="mt-4">hileryguedez@gmail.com</h5>
+                <h3 class="mt-2 card-title">Want to work together?</h3>
+                <h5 class="mt-4 card-sub">If you have a project in mind or just want to say hi, feel free to reach out to me. I’m always happy to connect and explore new opportunities</h5>
+                <h5 class="mt-4 card-sub">hileryguedez@gmail.com</h5>
                 <div class="row mt-5 d-flex align-items-center w-footer-contact">
                     <div class="col-12 col-lg-4 col-md-6 mr-3">
                         <button class="contact-btn px-5 py-2" onclick="sendEmail()">Contact</button>
@@ -606,6 +635,34 @@
             arrow: false,
             content: 'Css',
             theme: 'css',
+            animation: 'scale',
+        });
+        tippy('.devicon-django-plain', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'Django',
+            theme: 'django',
+            animation: 'scale',
+        });
+        tippy('.python-logo', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'Python',
+            theme: 'python',
+            animation: 'scale',
+        });
+        tippy('.pentaho-logo', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'Pentaho',
+            theme: 'pentaho',
+            animation: 'scale',
+        });
+        tippy('.powerbi-logo', {
+            placement: 'bottom',
+            arrow: false,
+            content: 'Microsoft Power BI',
+            theme: 'powerbi',
             animation: 'scale',
         });
     });
