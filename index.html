@@ -28,7 +28,7 @@
             
             display: flex;
             align-items: center;
-            background-image: url('images/pagebg.gif');
+            /*background-image: url('images/pagebg.gif');*/
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -253,6 +253,14 @@
         .tippy-box[data-theme~='python'] {background: linear-gradient(to right, #4B8BBE, #306998);}
         .tippy-box[data-theme~='pentaho'] {background-color: #015CA5;}
         .tippy-box[data-theme~='powerbi'] {background-color: #F2CF43;}
+
+        .blob {
+          background:#E5E5E5 ;
+          border-radius:999px;
+          position:fixed;
+          -webkit-filter: url("#goo");
+                  filter: url("#goo");
+        }
         /* Medium devices (tablets, 768px and up) */
         @media (max-width: 768px) {
             .contact-btn{
@@ -276,9 +284,18 @@
                 font-size: large;
             }
         }
+        
     </style>
 </head>
-<body>
+<body >
+    <div id="container">
+
+</div>
+<filter id="goo">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+  <feBlend in="SourceGraphic" in2="goo" />
+</filter>
 <div class="container">
     <nav class="navbar navbar-expand-sm navbar-dark bg-white d-flex justify-content-between">
         <!-- Navbar brand -->
@@ -356,7 +373,7 @@
         <div class="col-12 col-lg-8 col-md-8">
             <div class="card w-100 presentatation-card p-3">
               <div class="card-body ">
-                <h2 class="card-title"><strong>Hello, I'm Hilery Guedez a Software engineer with 3+ years of experience in software development</strong> </h2>
+                <h2 class="card-title"><strong>Hello, I'm Hilery Guedez a Software engineer with 4+ years of experience in software development</strong> </h2>
                 <h4 class="card-sub mb-2 mt-4"> I have a proven track record of designing and implementing software solutions to improve performance and efficiency</h4>
                 <div class="row mt-5 d-flex align-items-center">
                     <div class="col-12 col-lg-3 col-md-5 mr-3">
@@ -685,6 +702,50 @@
     function sendEmail() {
         window.location.href = "mailto:hileryguedez@gmail.com";
     }
+    var particles = [];
+
+    function addParticle() {
+        particles.push({
+            x: Math.random(),
+            y: Math.random(),
+            xVel: (Math.random() - 0.5) * 0.2,
+            yVel: (Math.random() - 0.5) * 0.2,
+            size: Math.random() * 50 + 50
+        });
+    }
+
+    function render() {
+        var elem = document.getElementById("container");
+        elem.innerHTML = "";
+        
+        for(i = 0; i < particles.length; i++) {
+            var newParticle = "<div class='blob' style='width:" + particles[i].size + "px; height:" + particles[i].size +  "px; top:" + particles[i].y * window.innerHeight + "px; left:" + particles[i].x * window.innerWidth + "px;'></div>";
+            elem.innerHTML += newParticle;
+        }
+    }
+
+    function dataUpdate() {
+        if(particles.length < 5 && Math.random() < 0.05) {
+            addParticle();
+        }
+    
+        for(i = 0; i < particles.length; i++) {
+            particles[i].x += particles[i].xVel / 35;
+            particles[i].y += particles[i].yVel / 35;
+            if(particles[i].x > 1.2 || particles[i].x < -0.2 || particles[i].y > 1.2 || particles[i].y < -0.2) {
+            particles.splice(i, 1);
+            }
+        }
+    }
+
+    function frame() {
+    dataUpdate();
+    render();
+    
+    window.requestAnimationFrame(frame);
+    }
+
+    window.requestAnimationFrame(frame);
 </script>
 </body>
 </html>
